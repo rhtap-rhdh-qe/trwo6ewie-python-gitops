@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: trwo6ewie-python-gitops
+  description: This is GitOps manifest for trwo6ewie-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=trwo6ewie-python
+    backstage.io/kubernetes-id: trwo6ewie-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: trwo6ewie-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:trwo6ewie-python
